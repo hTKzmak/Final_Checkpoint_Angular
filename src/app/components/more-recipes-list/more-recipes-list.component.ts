@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MoreRecipeItemComponent } from '../more-recipe-item/more-recipe-item.component';
+import { RecipesService } from '../../services/recipes.service';
 
 @Component({
   selector: 'app-more-recipes-list',
@@ -9,5 +10,6 @@ import { MoreRecipeItemComponent } from '../more-recipe-item/more-recipe-item.co
   styleUrl: './more-recipes-list.component.css'
 })
 export class MoreRecipesListComponent {
-
+  public recipesService = inject(RecipesService)
+  
 }

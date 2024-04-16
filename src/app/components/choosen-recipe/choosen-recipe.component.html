@@ -2,15 +2,22 @@
     <div class="recipe-info">
         <h3>{{name}}</h3>
 
-        <div class="ingredients">
-            <h4>Ingredients</h4>
-            <div class="ingredients-list">
-                @for(elem of ingredients; track $index){
-                    <div class="ingredient-item">
+        <div class="instructions">
+            <h4>Instructions</h4>
+            <ul>
+                @for(elem of instructions; track $index){
+                    <li>
                         {{elem}}
-                    </div>
+                    </li>
                 }
-            </div>
+            </ul>
+            <!-- <ul class="instructions-list">
+                @for(elem of instructions; track $index){
+                    <li class="instruction-item">
+                        {{elem}}
+                    </li>
+                }
+            </ul> -->
         </div>
 
         <div class="information">
@@ -34,9 +41,9 @@
                 </div>
             </div>
         </div>
-        <a class="btn" [routerLink]="'/recipe/' + id" (click)="getRecipeFunc()">Recipe</a>
     </div>
 
     <img src={{image}} alt="///" class="recipe-img">
 
 </div>
+

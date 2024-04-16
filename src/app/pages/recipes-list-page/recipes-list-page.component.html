@@ -4,23 +4,24 @@
     </div>
 
     <div class="difficult-navigation">
-        <a href="#!">All</a>
-        <a href="#!">Easy</a>
-        <a href="#!">Medium</a>
+        <a routerLink="all">All</a>
+        <a routerLink="easy">Easy</a>
+        <a routerLink="medium">Medium</a>
     </div>
 
 </header>
 
 <div class="type-navigation">
-    <a href="#!">Dinner</a>
-    <a href="#!">Lunch</a>
-    <a href="#!">Breakfast</a>
+    <a routerLink="/dinner">Dinner</a>
+    <a routerLink="/lunch">Lunch</a>
+    <a routerLink="/breakfast">Breakfast</a>
 </div>
 
 <main>
     <div class="container">
 
-        <app-recipes-list/>
+        <!-- <app-recipes-list/> -->
+        <router-outlet/>
 
         <h3>More recipes</h3>
         <app-more-recipes-list />

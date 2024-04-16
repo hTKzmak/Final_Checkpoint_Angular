@@ -13,7 +13,16 @@
     <div class="container">
 
         <div class="recipe-item-page">
-            <app-recipe-item />
+                <app-choosen-recipe 
+                    [id]="recipesService.recipe.id"
+                    [name]="recipesService.recipe.name"
+                    [instructions]="recipesService.recipe.instructions"
+                    [calories]="recipesService.recipe.caloriesPerServing"
+                    [rating]="recipesService.recipe.rating"
+                    [prepTimeMinutes]="recipesService.recipe.prepTimeMinutes"
+                    [cookTimeMinutes]="recipesService.recipe.cookTimeMinutes"
+                    [image]="recipesService.recipe.image"
+                />
         </div>
 
         <h3>More recipes</h3>

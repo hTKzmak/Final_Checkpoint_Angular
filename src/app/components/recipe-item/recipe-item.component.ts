@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { RecipesService } from '../../services/recipes.service';
 
 @Component({
   selector: 'app-recipe-item',
@@ -8,6 +9,20 @@ import { RouterLink } from '@angular/router';
   templateUrl: './recipe-item.component.html',
   styleUrl: './recipe-item.component.css'
 })
-export class RecipeItemComponent {
+export class RecipeItemComponent{
+  public recipesService = inject(RecipesService)
 
+  @Input() id: string = ''
+  @Input() name: string = ''
+  @Input() ingredients: any = []
+  @Input() calories: number = 0
+  @Input() rating: number = 0
+  @Input() prepTimeMinutes: number = 0
+  @Input() cookTimeMinutes: number = 0
+  @Input() image: string = ''
+
+
+  public getRecipeFunc(){
+    this.recipesService.getRecipe(this.id)
+  }
 }
